@@ -13,13 +13,13 @@ void times_table()
 			result = i * j;
 			if (result == 0)
 				_putchar(result + '0');
-			if (k < 10 && j != 0)
+			if (result < 10 && j != 0)
 			{
 				_putchar(',');
 				_putchar(' ');
 				_putchar(' ');
 				_putchar(result + '0');
-			} else if (k >= 10)
+			} else if (result >= 10)
 			{
 				_putchar(',');
 				_putchar(' ');
