@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
   * main - entry
@@ -11,6 +11,9 @@ int main(void)
 
 	for (int i = 0; i < 8; i++)
 	{
-		putchar(s[i]);
+		_putchar(s[i]);
 	}
+	_putchar('\n');
+	
+	return (0);
 }
