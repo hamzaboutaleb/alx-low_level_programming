@@ -12,7 +12,7 @@ void times_table()
 		{
 			result = i * j;
 			if (result == 0)
-				_putchar(k + '0');
+				_putchar(result + '0');
 			if (k < 10 && j != 0)
 			{
 				_putchar(',');
