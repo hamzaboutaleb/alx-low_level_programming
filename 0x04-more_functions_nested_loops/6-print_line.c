@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+  * print_line - print line of n _
+  * @n: lenght of line
+  */
+
 void print_line(int n)
 {
 	int i;
