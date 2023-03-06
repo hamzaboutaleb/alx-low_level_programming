@@ -20,8 +20,8 @@ char *_strstr(char *haystack, char *needle)
 			s2++;
 		}
 		if (*s2 == '\0')
-			return (s1)
-		haystack = str + 1;
+			return (s1);
+		haystack = s1 + 1;
 	}
 	return (0);
 }
