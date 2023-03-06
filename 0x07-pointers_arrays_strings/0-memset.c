@@ -5,7 +5,7 @@
   * @s: string
   * @b: character
   * @n: number of bytes
-  * Return: String
+  * Return: pointer to memory
   */
 char *_memset(char *s, char b, unsigned int n)
 {
