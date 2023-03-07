@@ -10,12 +10,12 @@
 void print_diagsums(int *a, int size)
 {
 	unsigned int n1, n2;
-	int i, j;
+	int i;
 
 	for (i = 0; i < size; i++)
 	{
-		n1 += a[i * size + i];
-		n2 += a[i * size + (size - 1 - i)];
+		n1 += a[(i * size) + i];
+		n2 += a[size * i + size - (i + 1)];
 	}
 	printf("%d, %d\n", n1, n2);
 }
