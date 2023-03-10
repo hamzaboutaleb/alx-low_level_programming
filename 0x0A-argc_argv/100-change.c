@@ -16,7 +16,7 @@ int to_coins(int n)
 		while (n >= coins[i])
 		{
 			sum++;
-			n-= coins[j];
+			n -= coins[i];
 		}
 	}
 	return (sum);
