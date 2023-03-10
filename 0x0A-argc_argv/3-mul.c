@@ -7,11 +7,15 @@
   */
 int main(int argc, char **argv)
 {
+	int sum;
+
 	if (argc != 3)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	printf("%d\n", argv[1] + argv[2]);
+
+	sum = (int) argv[1] + (int) argv[2];
+	printf("%d\n", sum);
 	return (0);
 }
