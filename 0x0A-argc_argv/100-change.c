@@ -11,7 +11,7 @@ int to_coins(int n)
 	int sum = 0, i;
 	int coins[] = {25, 10, 5, 2, 1};
 
-	for (i = 0; i < 5; i++)
+	for (i = 0; i < 5 && n >= 0; i++)
 	{
 		if (n % coins[i] == 0)
 		{
@@ -35,14 +35,14 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		puts("Error");
+		printf("Error\n");
 		return (1);
 	}
 
 	cents = atoi(argv[1]);
 	if (cents < 0)
 	{
-		puts("0");
+		printf("0\n");
 		return (0);
 	}
 
