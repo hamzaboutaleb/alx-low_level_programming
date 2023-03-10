@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 /**
   * main - print multiplcation of 2 number
   * @argc: number of args
@@ -15,7 +17,7 @@ int main(int argc, char **argv)
 		return (1);
 	}
 
-	sum = (int) argv[1] + (int) argv[2];
+	sum = atoi(argv[1]) + atoi(argv[2]);
 	printf("%d\n", sum);
 	return (0);
 }
