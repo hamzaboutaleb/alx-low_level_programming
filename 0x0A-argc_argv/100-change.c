@@ -8,36 +8,15 @@
   */
 int to_coins(int n)
 {
-	int cents, sum = 0;
-
-	cents = n;
-
-	while (cents != 0)
+	int sum = 0, i;
+	int coins[] = {25, 10, 5, 2, 1};
+	
+	for (i = 0; i < 5; i++)
 	{
-		if (cents % 25 == 0)
+		if (n % coins[i] == 0)
 		{
-			sum++;
-			cents -= 25;
-		}
-		else if (cents % 10 == 0)
-		{
-			sum++;
-			cents -= 10;
-		}
-		else if (cents % 5 == 0)
-		{
-			sum++;
-			cents -= 5;
-		}
-		else if (cents % 2 == 0)
-		{
-			sum++;
-			cents -= 2;
-		}
-		else
-		{
-			sum++;
-			cents--;
+			sum += (n / coins[i]);
+			n -= coins[i] * (n / coins[i]);
 		}
 	}
 	return (sum);
