@@ -10,7 +10,7 @@ int to_coins(int n)
 {
 	int sum = 0, i;
 	int coins[] = {25, 10, 5, 2, 1};
-	
+
 	for (i = 0; i < 5; i++)
 	{
 		if (n % coins[i] == 0)
