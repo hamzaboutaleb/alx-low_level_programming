@@ -8,9 +8,10 @@
   */
 int to_coins(int n)
 {
-	int cents;
+	int cents, sum = 0;
 
 	cents = n;
+
 	while (cents != 0)
 	{
 		if (cents % 25 == 0)
@@ -39,7 +40,7 @@ int to_coins(int n)
 			cents--;
 		}
 	}
-	return (cents);
+	return (sum);
 }
 
 /**
