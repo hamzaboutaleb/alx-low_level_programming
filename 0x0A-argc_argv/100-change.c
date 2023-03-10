@@ -13,10 +13,10 @@ int to_coins(int n)
 
 	for (i = 0; i < 5 && n >= 0; i++)
 	{
-		if (n % coins[i] == 0)
+		while (n >= coins[i])
 		{
-			sum += (n / coins[i]);
-			n -= coins[i] * (n / coins[i]);
+			sum++;
+			n-= coins[j];
 		}
 	}
 	return (sum);
