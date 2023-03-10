@@ -22,15 +22,15 @@ int is_num(char *s)
 /**
   * main - add numbers
   * @argc: number of args
-  * @argc: array of args
-  * Return : 0 || 1 (error)
+  * @argv: array of args
+  * Return: 0 || 1 (error)
   */
 
 int main(int argc, char **argv)
 {
 	int i, sum, num;
-	sum = 0;
 
+	sum = 0;
 	for (i = 1; i < argc; i++)
 	{
 		if (is_num(argv[i]) == 0)
