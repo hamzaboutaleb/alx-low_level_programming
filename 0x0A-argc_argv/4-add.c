@@ -2,6 +2,24 @@
 #include <stdlib.h>
 
 /**
+  * is_num - check if string is number
+  * @s: string to check
+  * Return: 0 || 1
+  */
+int is_num(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (!(s[i] >= '1') && !(s[i] <= 9))
+			return (0);
+	}
+
+	return (1);
+}
+
+/**
   * main - add numbers
   * @argc: number of args
   * @argc: array of args
@@ -11,22 +29,16 @@
 int main(int argc, char **argv)
 {
 	int i, sum, num;
-	if (argc == 1)
-	{
-		printf("0\n");
-		return (0);
-	}
-
 	sum = 0;
 
 	for (i = 1; i < argc; i++)
 	{
-		num = atoi(argv[i]);
-		if (num == 0)
+		if (is_num(argv[i]) == 0)
 		{
-			printf("Error\n");
+			printf("Error");
 			return (1);
 		}
+		num = atoi(argv[i]);
 		sum += num;
 	}
 	printf("%d", sum);
