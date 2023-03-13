@@ -23,7 +23,7 @@ char **strtow(char *str)
 	
 	words = count_words(str);
 
-	p = (char **) malloc(number_word + 1);
+	p = (char **) malloc(words + 1);
 	if (p == NULL)
 		return (NULL);	
 
