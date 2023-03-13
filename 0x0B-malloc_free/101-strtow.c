@@ -7,7 +7,7 @@ char **strtow(char *str)
 	int start;
 	char **p;
 
-	if (str == NULL || str == "")
+	if (str == NULL || str == '\0')
 		return (NULL);
 	
 	for (i = 0; str[i] != '\0'; i++)
