@@ -26,7 +26,7 @@ char **strtow(char *s)
 {
 	int i = 0, words = 0, k = 0, l = 0, m = 0;
 	char **p;
-	int start = 0, j = 0;
+	int start = 0;
 	int size = 0;
 
 	words = count_words(s);
