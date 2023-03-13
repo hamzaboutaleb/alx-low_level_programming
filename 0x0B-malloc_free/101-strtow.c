@@ -1,52 +1,63 @@
 #include <stdlib.h>
-
 int count_words(char *s)
 {
-	int result = 0, i = 0;
-
-	while (s[i] != '\0')
+	int words = 0, i = 0;
+	while(s[i])
 	{
-		if (s[i] == ' ')
-			result++;
+			if (s[i] == ' ')
+			{
+			 i++;
+			 continue;
+			}
+			else{
+				words++;
+				while (s[i])
+				{
+					if (s[i] == ' ')
+						break;
+					i++;
+				}
+			}
+
 	}
-
-	return result;
+	return words;
 }
-
-char **strtow(char *str)
+char **strtow(char *s)
 {
-	int words, k, i, l, size, start;
+	int i = 0, words = 0, k = 0, l = 0, m = 0;
 	char **p;
+	int start = 0, j = 0;
+	int size = 0;
 
-	if (str == NULL || *str == '\0')
-		return (NULL);
-	
-	words = count_words(str);
+	words = count_words(s);
 
-	p = (char **) malloc(words + 1);
-	if (p == NULL)
-		return (NULL);	
+	p = (char **) malloc(sizeof(char *) * (words + 1));
 
-	k = 0;
-	for (i = 0; i < words; i++)
+	while(s[i])
 	{
-		size = 0;
-		start = k;
-		while (str[k] != ' ')
+		start = i;
+
+		if (s[i] && s[i] == ' ')
 		{
-			size++;
-			k++;
+			i++;
+			continue;
 		}
-		k++;
 
-		p[i] = (char *) malloc(sizeof(char) * size + 2);
-		
+		while(s[i])
+		{
+			if (s[i] == ' ')
+				break;
+			i++;
+		}
+
+		size = i - start;
+
+		p[k++] = (char *) malloc((size + 1) * sizeof(char));
+
 		for (l = 0; l < size; l++)
-			p[i][l] = str[start + l];
-		p[i][l++] = '\n';
-		p[i][l] = '\0';
+			p[m][l] = s[start + l];
+		p[m++][l] = '\0';
 	}
-	p[i] = NULL;
-
-	return (p);
+	return p;
 }
+
