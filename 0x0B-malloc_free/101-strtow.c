@@ -3,7 +3,6 @@
 char **strtow(char *str)
 {
 	int number_word = 1, i, j, k, l, size = 0;
-	int word_size;
 	int start;
 	char **p;
 
@@ -22,7 +21,7 @@ char **strtow(char *str)
 	
 	k = 0;
 
-	for (i = 0; i < word - 1; i++)
+	for (i = 0; i < number_word - 1; i++)
 	{
 		size = 0;
 		start = k;
