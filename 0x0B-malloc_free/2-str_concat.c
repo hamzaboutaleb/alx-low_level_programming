@@ -13,6 +13,7 @@ char *str_concat(char *s1, char *s2)
 	if (s1 != NULL)
 		for (i = 0; s1[i] != '\0'; i++)
 			size_s1++;
+
 	if (s2 != NULL)
 		for (i = 0; s2[i] != '\0'; i++)
 			size_s2++;
@@ -24,7 +25,7 @@ char *str_concat(char *s1, char *s2)
 
 	for (i = 0; i < size_s1; i++)
 		p[i] = s1[i];
-	for (i = size_s1; i - size_s1 - 1 < size_s2; i++)
+	for (i = size_s1; i - size_s1 < size_s2; i++)
 		p[i] = s2[i - size_s1 - 1];
 	p[i] = '\0';
 	return (p);
