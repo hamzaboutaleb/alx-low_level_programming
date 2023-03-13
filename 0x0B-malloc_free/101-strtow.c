@@ -28,7 +28,7 @@ char **strtow(char *str)
 		return (NULL);	
 
 	k = 0;
-	for (i = 0; i < number_word; i++)
+	for (i = 0; i < words; i++)
 	{
 		size = 0;
 		start = k;
