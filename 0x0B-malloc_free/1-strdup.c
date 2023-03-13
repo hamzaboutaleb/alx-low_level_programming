@@ -6,11 +6,11 @@
   */
 char *_strdup(char *str)
 {
-	if (str == NULL)
-		return (NULL);
-
 	char *p;
 	int size_str, i;
+
+	if (str == NULL)
+		return (NULL);
 
 	for (size_str = 0; str[size_str] != '\0'; size_str++)
 	{
