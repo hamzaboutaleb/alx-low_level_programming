@@ -13,10 +13,10 @@ char **strtow(char *str)
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] == ' ')
-			word_size++;
+			number_word++;
 	}
 
-	p = (char **) malloc(word + 1);
+	p = (char **) malloc(number_word + 1);
 	if (p == NULL)
 		return (NULL);
 	
@@ -42,6 +42,7 @@ char **strtow(char *str)
 		for (l = 0; l < size; l++)
 			p[i][l] = str[start + l];
 	}
+	p[i] = NULL;
 
 	return (p);
 }
