@@ -21,7 +21,7 @@ char *argstostr(int ac, char **av)
 			size++;
 		size++;
 	}
-	printf("%d\n",size * sizeof(char));
+	printf("%ld\n",size * sizeof(char));
 
 	p = (char *) malloc(sizeof(char) * size);
 
