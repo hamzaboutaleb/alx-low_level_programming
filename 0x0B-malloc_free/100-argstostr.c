@@ -1,11 +1,11 @@
 #include <stdlib.h>
 /**
-  * argtostr - concatenate all arg
+  * argstostr - concatenate all arg
   * @ac: number of args
   * @av: pointer to args
   * Return: pointer to string
   */
-char *argtostr(int ac, char **av)
+char *argstostr(int ac, char **av)
 {
 	char *p;
 	int size, i, j, k = 0;
