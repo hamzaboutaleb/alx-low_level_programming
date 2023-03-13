@@ -40,13 +40,7 @@ char **strtow(char *str)
 		k++;
 
 		p[i] = (char *) malloc(sizeof(char) * size + 2);
-		if (p[i] == NULL)
-		{
-			for (l = 0; l < i; l++)
-				free(p[l]);
-			free(p);
-			return (NULL);
-		}
+		
 		for (l = 0; l < size; l++)
 			p[i][l] = str[start + l];
 		p[i][l++] = '\n';
