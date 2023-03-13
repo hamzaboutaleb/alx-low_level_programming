@@ -30,6 +30,8 @@ char **strtow(char *s)
 	int size = 0;
 
 	words = count_words(s);
+	if (words == 0 || s[0] == '\0')
+		return (NULL);
 
 	p = (char **) malloc(sizeof(char *) * (words + 1));
 
