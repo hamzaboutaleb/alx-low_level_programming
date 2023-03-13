@@ -1,27 +1,39 @@
 #include <stdlib.h>
+/**
+  * count_words - return number of words
+  * @s: string
+  * Return: number ofwrods
+  */
 int count_words(char *s)
 {
 	int words = 0, i = 0;
-	while(s[i])
+
+	while (s[i])
 	{
-			if (s[i] == ' ')
+		if (s[i] == ' ')
+		{
+			i++;
+			continue;
+		}
+		else
+		{
+		words++;
+			while (s[i])
 			{
-			 i++;
-			 continue;
+				if (s[i] == ' ')
+				break;
+				i++;
 			}
-			else{
-				words++;
-				while (s[i])
-				{
-					if (s[i] == ' ')
-						break;
-					i++;
-				}
-			}
+		}
 
 	}
-	return words;
+	return (words);
 }
+/**
+  * strtow - return array of words
+  * @s: string to convert to array
+  * Return: pointer to array
+  */
 char **strtow(char *s)
 {
 	int i = 0, words = 0, k = 0, l = 0, m = 0;
@@ -35,7 +47,7 @@ char **strtow(char *s)
 
 	p = (char **) malloc(sizeof(char *) * (words + 1));
 
-	while(s[i])
+	while (s[i])
 	{
 		start = i;
 
@@ -45,7 +57,7 @@ char **strtow(char *s)
 			continue;
 		}
 
-		while(s[i])
+		while (s[i])
 		{
 			if (s[i] == ' ')
 				break;
@@ -60,6 +72,6 @@ char **strtow(char *s)
 			p[m][l] = s[start + l];
 		p[m++][l] = '\0';
 	}
-	return p;
+	return (p);
 }
 
