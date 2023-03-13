@@ -2,7 +2,7 @@
 
 char **strtow(char *str)
 {
-	int number_word = 1, i, j, k, l, size = 0;
+	int number_word = 1, i, k, l, size = 0;
 	int start;
 	char **p;
 
