@@ -9,11 +9,13 @@ char *str_concat(char *s1, char *s2)
 {
 	char *p;
 	int i, size_s1 = 0, size_s2 = 0;
-
-	for (i = 0; s1[i] != '\0'; i++)
-		size_s1++;
-	for (i = 0; s2[i] != '\0'; i++)
-		size_s2++;
+	
+	if (s1 != NULL)
+		for (i = 0; s1[i] != '\0'; i++)
+			size_s1++;
+	if (s2 != NULL)
+		for (i = 0; s2[i] != '\0'; i++)
+			size_s2++;
 
 	p = (char *) malloc(sizeof(char) * (size_s1 + size_s2 + 1));
 
