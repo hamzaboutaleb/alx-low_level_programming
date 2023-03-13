@@ -1,5 +1,10 @@
 #include <stdlib.h>
-
+/**
+  * create_array - create array and fill it with c
+  * @size: size of array
+  * @c: character to fill array with it
+  * Return: pointer to array memory
+  */
 char *create_array(unsigned int size, char c)
 {
 	unsigned int i;
@@ -12,7 +17,7 @@ char *create_array(unsigned int size, char c)
 
 	if (p == NULL)
 		return (NULL);
-	
+
 	for (i = 0; i < size; i++)
 	{
 		p[i] = c;
