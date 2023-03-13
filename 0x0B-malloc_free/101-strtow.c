@@ -1,27 +1,34 @@
 #include <stdlib.h>
 
+int count_words(char *s)
+{
+	int result = 0, i = 0;
+
+	while (s[i] != '\0')
+	{
+		if (s[i] == ' ')
+			result++;
+	}
+
+	return result;
+}
+
 char **strtow(char *str)
 {
-	int number_word = 1, i, k, l, size = 0;
-	int start;
+	int words;
 	char **p;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
 	
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		if (str[i] == ' ')
-			number_word++;
-	}
+	words = count_words(str);
 
 	p = (char **) malloc(number_word + 1);
 	if (p == NULL)
-		return (NULL);
-	
-	k = 0;
+		return (NULL);	
 
-	for (i = 0; i < number_word - 1; i++)
+
+	for (i = 0; i < number_word; i++)
 	{
 		size = 0;
 		start = k;
