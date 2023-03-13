@@ -1,4 +1,6 @@
 #include <stdlib.h>
+#include <stdio.h>
+
 /**
   * argstostr - concatenate all arg
   * @ac: number of args
@@ -19,7 +21,10 @@ char *argstostr(int ac, char **av)
 			size++;
 		size++;
 	}
+	printf("%d\n",size * sizeof(char));
+
 	p = (char *) malloc(sizeof(char) * size);
+
 	if (p == NULL)
 		return (NULL);
 
