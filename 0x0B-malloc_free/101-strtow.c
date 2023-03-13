@@ -40,6 +40,7 @@ char **strtow(char *str)
 		}
 		for (l = 0; l < size; l++)
 			p[i][l] = str[start + l];
+		p[i][l] = '\0';
 	}
 	p[i] = NULL;
 
