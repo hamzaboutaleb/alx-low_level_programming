@@ -1,7 +1,10 @@
 #include <stdlib.h>
-#include <string.h>
 
-
+/**
+  * _strlen - length of string
+  * @s: string
+  * Return: length
+  */
 int _strlen(char *s)
 {
 	int i;
