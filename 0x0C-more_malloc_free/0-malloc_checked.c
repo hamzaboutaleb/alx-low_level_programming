@@ -4,6 +4,7 @@
   * @b: size of memory
   * Return: pointer to memory
   */
+
 void *malloc_checked(unsigned int b)
 {
 	void *p;
