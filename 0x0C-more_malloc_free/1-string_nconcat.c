@@ -20,7 +20,7 @@ int _strlen(char *s)
   * @s1: string
   * @s2: string
   * @n: number of byte form string 2 to concatnate with first string
-  * Retunr: pointer to new memory
+  * Return: pointer to new memory
   */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
@@ -39,7 +39,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (p == NULL)
 		return (NULL);
-	
+
 	for (i = 0; i < len_s1; i++)
 		p[j++] = s1[i];
 	for (i = 0; i < n; i++)
