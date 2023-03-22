@@ -3,11 +3,12 @@
   * @array: array to search in
   * @size: size of arrau
   * @cmp: function use to verfie
+  * Return: index of elemnt or -1
   */
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i;
-	
+
 	if (size <= 0)
 		return (-1);
 
