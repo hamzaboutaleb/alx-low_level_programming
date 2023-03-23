@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 /**
-  * printf_all - printf formated string
+  * print_all - printf formated string
   * @format: string format
   */
 void print_all(const char * const format, ...)
@@ -16,7 +16,7 @@ void print_all(const char * const format, ...)
 	va_start(ptr, format);
 	while (i < strlen(format))
 	{
-		switch(format[i])
+		switch (format[i])
 		{
 			case 's':
 				p = va_arg(ptr, char *);
