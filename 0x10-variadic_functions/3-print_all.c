@@ -9,7 +9,7 @@
 void print_all(const char * const format, ...)
 {
 	va_list ptr;
-	int n, i;
+	size_t i;
 	char *p;
 
 	i = 0;
