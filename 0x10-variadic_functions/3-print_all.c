@@ -13,7 +13,7 @@ void print_all(const char * const format, ...)
 	char *p;
 
 	i = 0;
-	va_star(ptr, format);
+	va_start(ptr, format);
 	while (i < strlen(format))
 	{
 		switch(format[i])
@@ -29,10 +29,10 @@ void print_all(const char * const format, ...)
 				printf("%d", va_arg(ptr, int));
 			break;
 			case 'f':
-				printf("%f", va_arg(ptr, float));
+				printf("%f", va_arg(ptr, double));
 			break;
 			case 'c':
-				printf("%c", va_arg(ptr char));
+				printf("%c", va_arg(ptr, int));
 			break;
 		}
 
@@ -40,6 +40,6 @@ void print_all(const char * const format, ...)
 			printf(", ");
 		i++;
 	}
-	pritnf("\n");
+	printf("\n");
 	va_end(ptr);
 }
