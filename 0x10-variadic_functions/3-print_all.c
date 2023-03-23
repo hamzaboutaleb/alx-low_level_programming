@@ -10,7 +10,8 @@ void print_all(const char * const format, ...)
 {
 	va_list ptr;
 	size_t i;
-	char *p, p1;
+	char *p;
+	char p1;
 
 	i = 0;
 	va_start(ptr, format);
@@ -39,7 +40,7 @@ void print_all(const char * const format, ...)
 			break;
 		}
 
-		if (p == 'c' || p == 's' || p == 'f' || p == 'i')
+		if (p1 == 'c' || p1 == 's' || p1 == 'f' || p1 == 'i')
 			if (i != strlen(format) - 1)
 				printf(", ");
 		i++;
