@@ -1,5 +1,6 @@
 #include "3-calc.h"
 #include <stdio.h>
+#include <stdlib.h>
 int main(int argc, char *argv[])
 {
 	int (*op)(int ,int);
@@ -19,5 +20,5 @@ int main(int argc, char *argv[])
 	}
 
 	printf("%d\n", op(atoi(argv[1]), atoi(argv[3])));
-	return (0)
+	return (0);
 }
