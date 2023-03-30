@@ -10,19 +10,21 @@ void free_node(list_t *node)
 	free(node->str);
 	free(node);
 }
-
+/**
+ * free_list - free list from memory
+ * @head: pointer to head
+*/
 void free_list(list_t *head)
 {
 	list_t *temp;
-	list_t *current = head;
 
 	if (head == NULL)
-		return (NULL);
-	while (head²->next && head²)
+		return;
+	while (head)
 	{
-		temp = head²->next;
-		free_node(head²);
-		head² = temp;
+		temp = head->next;
+		free_node(head);
+		head = temp;
 	}
 
 
