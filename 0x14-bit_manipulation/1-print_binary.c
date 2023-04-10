@@ -5,7 +5,7 @@
 */
 void print_binary(unsigned long int n)
 {
-	unsigned int base = 1;
+	unsigned int base = 0;
 	unsigned int sum = 0;
 	unsigned int value;
 
@@ -25,7 +25,7 @@ void print_binary(unsigned long int n)
 		base++;
 	}
 
-	while (n > 0 || base != 0)
+	while (n > 0 || base > 0)
 	{
 		value = _pow(2, base - 1);
 		if (value <= n)
@@ -53,7 +53,8 @@ void print_binary(unsigned long int n)
 int _pow(int b, int exp)
 {
 	int result = 1;
-
+	if (exp == 0)
+		return (1);
 	while (exp > 0)
 	{
 		result *= b;
