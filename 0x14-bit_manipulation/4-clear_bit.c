@@ -1,23 +1,23 @@
 #include "main.h"
 /**
- * set_bit - set bit to 1 at index
+ * clear_bit- set bit to 0 at index
  * @n: number
  * @index: index of bit
- * Return: number
+ * Return: 1 or 0
 */
-int set_bit(unsigned long int *n, unsigned int index)
+int clear_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned int number_bits;
-	unsigned long int mask = 1UL;
+	unsigned long int mask = 1;
 
 	number_bits = sizeof(unsigned long int) * 8;
 
 	if (index > number_bits)
 		return (-1);
 
-	mask <<= index;
+	mask = ~(1 << index);
 
-	*n = (*n) | mask;
+	*n = (*n) & mask;
 
 	return (1);
 }
