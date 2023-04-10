@@ -14,6 +14,11 @@ void print_binary(unsigned long int n)
 		_putchar('0');
 		return;
 	}
+	if (n == 1)
+	{
+		_putchar('1');
+		return;
+	}
 	while (sum < n)
 	{
 		sum += _pow(2, base);
@@ -36,4 +41,20 @@ void print_binary(unsigned long int n)
 		}
 	}
 
+}
+
+
+/**
+ * _pow - return power of number
+ * @b: base
+ * @exp: exponent
+ * Return: power of number
+*/
+int _pow(int b, int exp) {
+  int result = 1;
+  while (exp > 0) {
+	result *= b;
+	exp--;
+  }
+  return result;
 }
