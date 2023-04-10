@@ -24,10 +24,11 @@ void print_binary(unsigned long int n)
 		sum += _pow(2, base);
 		base++;
 	}
+	base--;
 
-	while (n > 0 || base > 0)
+	while (base + 1)
 	{
-		value = _pow(2, base - 1);
+		value = _pow(2, base);
 
 		if (value <= n)
 		{
@@ -43,7 +44,6 @@ void print_binary(unsigned long int n)
 	}
 
 }
-
 
 /**
  * _pow - return power of number
