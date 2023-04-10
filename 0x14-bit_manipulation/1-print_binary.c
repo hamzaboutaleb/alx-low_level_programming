@@ -1,0 +1,39 @@
+#include "main.h"
+/**
+ * print_binary - prints the binary representation of a number
+ * @n: number to print as binary
+*/
+void print_binary(unsigned long int n)
+{
+	unsigned int base = 1;
+	unsigned int sum = 0;
+	unsigned int value;
+
+	if (n == 0)
+	{
+		_putchar('0');
+		return;
+	}
+	while (sum < n)
+	{
+		sum += _pow(2, base);
+		base++;
+	}
+
+	while (n > 0 || base != 0)
+	{
+		value = _pow(2, base - 1);
+		if ( value <= n)
+		{
+			_putchar('1');
+			n -= value;
+			base--;
+		}
+		else
+		{
+			_putchar('0');
+			base--;
+		}
+	}
+
+}
