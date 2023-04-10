@@ -28,7 +28,7 @@ void print_binary(unsigned long int n)
 	while (n > 0 || base != 0)
 	{
 		value = _pow(2, base - 1);
-		if ( value <= n)
+		if (value <= n)
 		{
 			_putchar('1');
 			n -= value;
@@ -50,11 +50,14 @@ void print_binary(unsigned long int n)
  * @exp: exponent
  * Return: power of number
 */
-int _pow(int b, int exp) {
-  int result = 1;
-  while (exp > 0) {
-	result *= b;
-	exp--;
-  }
-  return result;
+int _pow(int b, int exp)
+{
+	int result = 1;
+
+	while (exp > 0)
+	{
+		result *= b;
+		exp--;
+	}
+	return (result);
 }
