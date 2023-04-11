@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 	do {
 		write_err(f_to, argv[2]);
 		read_err(read_f, argv[1]);
-		write_f = write(f_to, read, 1024);
+		write_f = write(f_to, buffer, 1024);
 		write_err(write_f, argv[2]);
 		read_f = read(f_from, buffer, 1024);
 		f_to = open(argv[2], O_WRONLY | O_APPEND);
@@ -71,4 +71,5 @@ int main(int argc, char *argv[])
 	free(buffer);
 	close_f(f_from);
 	close_f(f_to);
+	return (0);
 }
