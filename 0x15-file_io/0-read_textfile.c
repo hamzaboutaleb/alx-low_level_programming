@@ -6,6 +6,7 @@
  * read_textfile - read n letters from file
  * @filename: pointer to file name
  * @letters: number of letters to print
+ * Return: number of char printed
 */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
@@ -20,9 +21,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (fopen == -1)
 		return (0);
+
 	buffer = (char *) malloc(sizeof(char) * letters);
 	if (buffer == NULL)
 		return (0);
+
 	fread = read(fopen, buffer, letters);
 	fwrite = write(STDOUT_FILENO, buffer, fread);
 	free(buffer);
