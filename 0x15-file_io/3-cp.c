@@ -21,6 +21,7 @@ void close_f(int f)
 		exit(100);
 	}
 }
+
 /**
  * main - entry point to programm
  * @argc: number of arguments
@@ -37,6 +38,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
+
 	buffer = malloc(sizeof(char) * 1024);
 	if (buffer == NULL)
 	{
@@ -53,7 +55,7 @@ int main(int argc, char *argv[])
 			free(buffer);
 			exit(98);
 		}
-		write_f = write(f_to, buffer, 1024);
+		write_f = write(f_to, buffer, read_f);
 		if (write_f == -1 || f_to == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
