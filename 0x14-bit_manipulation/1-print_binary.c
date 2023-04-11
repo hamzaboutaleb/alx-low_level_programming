@@ -1,4 +1,7 @@
 #include "main.h"
+
+int _pow(int b, int exp);
+
 /**
  * print_binary - prints the binary representation of a number
  * @n: number to print as binary
