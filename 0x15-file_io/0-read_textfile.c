@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <sys/types.h>
+#include "main.h"
 /**
  * read_textfile - read n letters from file
  * @filename: pointer to file name
