@@ -5,22 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/**
- * close_f - close file
- * @f: file
-*/
-void close_f(int f)
-{
-	int close_f;
-
-	close_f = close(f);
-
-	if (close_f == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f);
-		exit(100);
-	}
-}
+void close_f(int fd);
 
 /**
  * main - entry point to programm
@@ -63,10 +48,28 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 		read_f = read(f_from, buffer, 1024);
-		f_to = open(argv[20], O_WRONLY | O_APPEND);
+		f_to = open(argv[2], O_WRONLY | O_APPEND);
 	} while (read_f > 0);
 	free(buffer);
 	close_f(f_from);
 	close_f(f_to);
 	return (0);
+}
+
+
+/**
+ * close_f - close file
+ * @f: file
+*/
+void close_f(int fd)
+{
+	int c;
+
+	c = close(fd);
+
+	if (c == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
 }
