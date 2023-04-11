@@ -16,7 +16,7 @@ int create_file(const char *filename, char *text_content)
 	fo = open(filename, O_RDWR | O_CREAT | O_TRUNC, 600);
 	if (fo == -1)
 		return (-1);
-	len = 0;
+
 	if (text_content != NULL)
 		for (len = 0; text_content[len] != '\0'; len++);
 
@@ -26,5 +26,6 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 
 	close(fo);
+
 	return (1);
 }
