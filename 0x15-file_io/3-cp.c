@@ -5,26 +5,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-char *buffer;
 
-void read_err(int file, char *name)
-{
-	if (file == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", name);
-		free(buffer);
-		exit(99);
-	}
-}
-void write_err(int file, char *name)
-{
-	if (file == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s", name);
-		free(buffer);
-		exit(99);
-	}
-}
 void close_f(int f)
 {
 	int close_f;
@@ -40,6 +21,7 @@ void close_f(int f)
 int main(int argc, char *argv[])
 {
 	int f_from, f_to, read_f, write_f;
+	char *buffer;
 
 	if (argc != 3)
 	{
@@ -59,13 +41,21 @@ int main(int argc, char *argv[])
 
 
 	do {
-		read_err(f_from, argv[1]);
-		read_err(read_f, argv[1]);
+		if (f_from == -1 || read_f == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			free(buffer);
+			exit(98);
+		}
 		write_f = write(f_to, buffer, 1024);
-		write_err(f_to, argv[2]);
-		write_err(write_f, argv[2]);
+		if (write_f == -1 || f_to == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			free(buffer);
+			exit(99);
+		}
 		read_f = read(f_from, buffer, 1024);
-		f_to = open(argv[2], O_WRONLY | O_APPEND);
+		f_to = open(argv[20], O_WRONLY | O_APPEND);
 	} while (read_f > 0);
 
 	free(buffer);
