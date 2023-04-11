@@ -61,15 +61,15 @@ int main(int argc, char *argv[])
  * close_f - close file
  * @f: file
 */
-void close_f(int fd)
+void close_f(int f)
 {
 	int c;
 
-	c = close(fd);
+	c = close(f);
 
 	if (c == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f);
 		exit(100);
 	}
 }
