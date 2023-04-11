@@ -1,4 +1,5 @@
 #include <string.h>
+#include <stdlib.h>
 #include "main.h"
 /**
  * create_file - create file
@@ -8,8 +9,7 @@
 */
 int create_file(const char *filename, char *text_content)
 {
-	int fo, fw;
-	int len = 0;
+	int fo, fw, len = 0;
 
 	if (filename == NULL)
 		return (-1);
