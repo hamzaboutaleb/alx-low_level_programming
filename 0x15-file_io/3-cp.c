@@ -56,13 +56,13 @@ int main(int argc, char *argv[])
 	f_from = open(argv[1], O_RDONLY);
 	read_f = read(f_from, buffer, 1024);
 	f_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-	read_err(f_from, argv[1]);
 
 
 	do {
-		write_err(f_to, argv[2]);
+		read_err(f_from, argv[1]);
 		read_err(read_f, argv[1]);
 		write_f = write(f_to, buffer, 1024);
+		write_err(f_to, argv[2]);
 		write_err(write_f, argv[2]);
 		read_f = read(f_from, buffer, 1024);
 		f_to = open(argv[2], O_WRONLY | O_APPEND);
