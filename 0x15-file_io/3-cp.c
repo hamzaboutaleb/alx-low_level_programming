@@ -5,7 +5,10 @@
 #include <fcntl.h>
 #include <unistd.h>
 
-
+/**
+ * close_f - close file
+ * @f: file
+*/
 void close_f(int f)
 {
 	int close_f;
@@ -18,6 +21,12 @@ void close_f(int f)
 		exit(100);
 	}
 }
+/**
+ * main - entry point to programm
+ * @argc: number of arguments
+ * @argv: pointer to arguments
+ * Return: 0
+*/
 int main(int argc, char *argv[])
 {
 	int f_from, f_to, read_f, write_f;
@@ -25,7 +34,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO,"Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	buffer = malloc(sizeof(char) * 1024);
@@ -34,12 +43,9 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-
 	f_from = open(argv[1], O_RDONLY);
 	read_f = read(f_from, buffer, 1024);
 	f_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-
-
 	do {
 		if (f_from == -1 || read_f == -1)
 		{
@@ -57,7 +63,6 @@ int main(int argc, char *argv[])
 		read_f = read(f_from, buffer, 1024);
 		f_to = open(argv[20], O_WRONLY | O_APPEND);
 	} while (read_f > 0);
-
 	free(buffer);
 	close_f(f_from);
 	close_f(f_to);
