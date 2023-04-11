@@ -1,4 +1,3 @@
-#include <string.h>
 #include "main.h"
 /**
  * create_file - create file
@@ -19,7 +18,8 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	len = 0;
 	if (text_content != NULL)
-		len = strlen(text_content);
+		for (len = 0; text_content[len] != '\0'; len++);
+
 	fw = write(fo, text_content, len);
 
 	if (fw == -1)
