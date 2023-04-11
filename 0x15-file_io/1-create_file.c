@@ -17,7 +17,8 @@ int create_file(const char *filename, char *text_content)
 	fo = open(filename, O_RDWR | O_CREAT | O_TRUNC, 600);
 	if (fo == -1)
 		return (-1);
-	len = strlen(text_content);
+	if (text_content != NULL)
+		len = strlen(text_content);
 	fw = write(fo, text_content, len);
 
 	if (fw == -1)
