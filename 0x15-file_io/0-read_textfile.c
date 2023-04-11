@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <sys/types.h>
 #include "main.h"
 /**
@@ -8,23 +9,26 @@
 */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE* fptr;
-	char c;
-	size_t i = 0;
+	int fopen;
+	char *buffer;
+	int fread, fwrite;
 
 	if (filename == NULL)
 		return (0);
 
-	fptr = fopen(filename, "r");
+	fopen = open(filename, O_RDONLY);
 
-	if (fptr == NULL)
+	if (fopen == -1)
+		return (0);
+	buffer = (char *) malloc(sizeof(char) * letters);
+	if (buffer == NULL)
+		return (0);
+	fread = read(fopen, buffer, letters);
+	fwrite = write(STDOUT_FILENO, buffer, fread);
+	free(buffer);
+	if (fread == -1 || fwrite == -1)
 		return (0);
 
-	while ((c = fgetc(fptr)) != EOF && i < letters)
-	{
-		_putchar(c);
-		i++;
-	}
-
-	return (i);
+	close(fopen);
+	return (fread);
 }
