@@ -1,9 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * close_f - close file
@@ -30,7 +30,8 @@ void close_f(int f)
 */
 int main(int argc, char *argv[])
 {
-	int f_from, f_to, read_f, write_f;
+	int f_from, f_to;
+	int read_f, write_f;
 	char *buffer;
 
 	if (argc != 3)
@@ -38,7 +39,6 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-
 	buffer = malloc(sizeof(char) * 1024);
 	if (buffer == NULL)
 	{
